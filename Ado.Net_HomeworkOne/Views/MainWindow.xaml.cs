@@ -1,39 +1,28 @@
 ﻿using Ado.Net_HomeworkOne.Models;
-using System;
-using System.Collections.Generic;
+using Ado.Net_HomeworkOne.Views;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Ado.Net_HomeworkOne;
 
 public partial class MainWindow : Window
 {
-    string connectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString;
+ 
 
     public MainWindow()
     {
         InitializeComponent();
-
     }
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
+        myListView.Items.Clear();
+
         using (var conn = new SqlConnection())
         {
-            conn.ConnectionString = connectionString;
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString;
             conn.Open();
 
             using (SqlCommand command = new("ShowAllBooks", conn))
@@ -55,13 +44,51 @@ public partial class MainWindow : Window
                     var CategoryName = reader["CategoryName"] as string;
                     var PressName = reader["PressName"] as string;
 
-                    var book = new Books(bookId, bookName!, bookPages, bookYearPress, comment, quantity, AuthorFullName,ThemesName,CategoryName,PressName);
+                    var book = new Books(bookId, bookName!, bookPages, bookYearPress, comment!, quantity, AuthorFullName!, ThemesName!, CategoryName!, PressName!);
                     myListView.Items.Add(book);
-                  
+
 
                 }
 
             }
         }
+    }
+
+    private void Button_Click_1(object sender, RoutedEventArgs e)
+    {
+        var obj = myListView.SelectedItem;
+        var book = obj as Books;
+
+        using (var conn = new SqlConnection())
+        {
+            conn.ConnectionString = ConfigurationManager.ConnectionStrings["myConnString"].ConnectionString ;
+            conn.Open();
+
+
+            var param = new SqlParameter();
+            param.ParameterName = "@booksId";
+            param.SqlDbType = SqlDbType.Int;
+            param.Value = book!.Id;
+
+
+            using (SqlCommand command = new SqlCommand("DeleteBooks", conn))
+            {
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.Add(param);
+
+                var result = command.ExecuteNonQuery();
+
+            }
+
+
+           MessageBox.Show("Successfully Deleted");
+        }
+
+    }
+
+    private void Button_Click_2(object sender, RoutedEventArgs e)
+    {
+        AddBookWindow window = new AddBookWindow();
+        window.ShowDialog();
     }
 }

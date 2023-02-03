@@ -87,6 +87,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0"
+                    Click="Button_Click_2"
                     Content="Add Book"
                     Style="{StaticResource btnStyle}"
                     />
@@ -99,6 +100,7 @@
 
             <Button Grid.Column="2"
                     Content="Delete Book"
+                    Click="Button_Click_1"
                     Style="{StaticResource btnStyle}"
                     />
 
