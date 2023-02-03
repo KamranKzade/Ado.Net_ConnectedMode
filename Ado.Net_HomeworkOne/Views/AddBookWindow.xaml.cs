@@ -90,6 +90,8 @@ public partial class AddBookWindow : Window
                 var result = command.ExecuteNonQuery();
                 MessageBox.Show($"{result} rows affected");
             }
+
+            DialogResult = true;
         }
     }
 }

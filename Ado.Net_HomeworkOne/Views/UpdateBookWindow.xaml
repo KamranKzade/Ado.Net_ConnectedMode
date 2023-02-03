@@ -37,73 +37,64 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <!-- Label -->
-                <Label Style="{StaticResource LblStyle}"
-                   Content="Id"
-                   Foreground="Chocolate"/>
-
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="1" 
+                   Grid.Row="0" 
                    Content="Name"
                    Foreground="Chocolate"/>
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="2" 
+                   Grid.Row="1" 
                    Content="Pages"
                    Foreground="Chocolate"/>
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="3" 
+                   Grid.Row="2" 
                    Content="YearPress"
                    Foreground="Chocolate"/>
 
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="4" 
+                   Grid.Row="3" 
                    Content="Comment"
                    Foreground="Chocolate"/>
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="5" 
+                   Grid.Row="4" 
                    Content="Quantity"
                    Foreground="Chocolate"/>
 
-                <TextBox Grid.Column="1"
-                     Name="id_txt"
-                     Style="{StaticResource txtBoxStyle}"
-                     />
 
                 <TextBox Grid.Column="1"
                      Name="name_txt"
-                     Grid.Row="1"
+                     Grid.Row="0"
                      Style="{StaticResource txtBoxStyle}"
                      />
 
                 <TextBox Grid.Column="1"
-                     Grid.Row="2"
+                     Grid.Row="1"
                      Name="pages_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />
 
                 <TextBox Grid.Column="1"
-                     Grid.Row="3"
+                     Grid.Row="2"
                      Name="yearpress_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />
 
 
                 <TextBox Grid.Column="1"
-                     Grid.Row="4"
+                     Grid.Row="3"
                      Name="comment_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />
 
                 <TextBox Grid.Column="1"
-                     Grid.Row="5"
+                     Grid.Row="4"
                      Name="quantity_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />
