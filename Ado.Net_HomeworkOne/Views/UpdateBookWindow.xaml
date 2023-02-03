@@ -38,10 +38,6 @@
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <!-- Label -->
@@ -68,36 +64,11 @@
 
                 <Label Style="{StaticResource LblStyle}"
                    Grid.Row="4" 
-                   Content="Id_Themes"
-                   Foreground="Chocolate"/>
-
-
-
-                <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="5" 
-                   Content="Id_Category"
-                   Foreground="Chocolate"/>
-
-
-                <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="6" 
-                   Content="Id_Author"
-                   Foreground="Chocolate"/>
-
-
-                <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="7" 
-                   Content="Id_Press"
-                   Foreground="Chocolate"/>
-
-
-                <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="8" 
                    Content="Comment"
                    Foreground="Chocolate"/>
 
                 <Label Style="{StaticResource LblStyle}"
-                   Grid.Row="9" 
+                   Grid.Row="5" 
                    Content="Quantity"
                    Foreground="Chocolate"/>
 
@@ -124,38 +95,15 @@
                      Style="{StaticResource txtBoxStyle}"
                      />
 
+
                 <TextBox Grid.Column="1"
                      Grid.Row="4"
-                     Name="idThemes_txt"
-                     Style="{StaticResource txtBoxStyle}"
-                     />
-
-                <TextBox Grid.Column="1"
-                     Name="idCategory_txt"
-                     Grid.Row="5"
-                     Style="{StaticResource txtBoxStyle}"
-                     />
-
-                <TextBox Grid.Column="1"
-                     Grid.Row="6"
-                     Name="idAuthor_txt"
-                     Style="{StaticResource txtBoxStyle}"
-                     />
-
-                <TextBox Grid.Column="1"
-                     Grid.Row="7"
-                     Name="idPress_txt"
-                     Style="{StaticResource txtBoxStyle}"
-                     />
-
-                <TextBox Grid.Column="1"
-                     Grid.Row="8"
                      Name="comment_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />
 
                 <TextBox Grid.Column="1"
-                     Grid.Row="9"
+                     Grid.Row="5"
                      Name="quantity_txt"
                      Style="{StaticResource txtBoxStyle}"
                      />

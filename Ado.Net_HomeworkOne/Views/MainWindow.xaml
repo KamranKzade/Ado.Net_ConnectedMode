@@ -94,6 +94,7 @@
 
             <Button Grid.Column="1"
                     Content="Update Book"
+                    Click="Button_Click_3"
                     Style="{StaticResource btnStyle}"
                     />
 

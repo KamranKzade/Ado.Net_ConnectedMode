@@ -91,4 +91,13 @@ public partial class MainWindow : Window
         AddBookWindow window = new AddBookWindow();
         window.ShowDialog();
     }
+
+    private void Button_Click_3(object sender, RoutedEventArgs e)
+    {
+        var obj = myListView.SelectedItem;
+        var book = obj as Books;
+
+        UpdateBookWindow updateBook = new(book);
+        updateBook.ShowDialog();
+    }
 }
